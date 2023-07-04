@@ -17,6 +17,3 @@ class UserModel with _$UserModel {
   factory UserModel.fromJson(Map<String, Object?> json) =>
       _$UserModelFromJson(json);
 }
-
-
-

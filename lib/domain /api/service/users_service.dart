@@ -6,13 +6,14 @@ import '../repository/i_users_repository.dart';
 class UsersService implements IUsersRepository {
   final Dio _dio = Dio();
 
+  static const String API_URL = 'https://randomuser.me/api/?results=50';
+
   @override
   Future<UserModel> getUsers() async {
     try {
-      Response response =
-          await _dio.get('https://randomuser.me/api/?results=50');
+      Response response = await _dio.get(API_URL);
       if (response.statusCode == 200) {
-        log('${response.data}',name: 'RESPONSE');
+        log('${response.data}', name: 'RESPONSE');
         return UserModel.fromJson(response.data);
       } else {
         log('Error ${response.statusCode}',
@@ -24,6 +25,3 @@ class UsersService implements IUsersRepository {
     }
   }
 }
-
-
-
