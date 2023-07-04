@@ -1,8 +1,11 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:river/data/users_models/users_model.dart';
 import '../repository/i_users_repository.dart';
 
+@Named("UsersService")
+@Injectable(as: IUsersRepository)
 class UsersService implements IUsersRepository {
   final Dio _dio = Dio();
 
