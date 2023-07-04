@@ -13,9 +13,7 @@ class HomeScreen extends ConsumerWidget {
     final userData = ref.watch(usersDataProvider);
     return Scaffold(
     body: userData.when(
-          data: (userData){
-           return listWidget(context, userData);
-          },
+          data: (userData) => listWidget(context, userData),
           error: (error, stackTrace) => errorWidget(error.toString()),
           loading: () => loadingWidget()),
     );
