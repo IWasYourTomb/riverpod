@@ -26,10 +26,7 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.factory<_i3.IUsersRepository>(
-      () => _i4.UsersService(),
-      instanceName: 'UsersService',
-    );
+    gh.factory<_i3.IUsersRepository>(() => _i4.UsersService());
     gh.factory<_i5.UserProvider>(() => _i5.UserProvider());
     return this;
   }

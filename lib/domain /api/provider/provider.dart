@@ -6,7 +6,7 @@ import 'package:river/internal/di/inject.dart';
 
 @injectable
 class UserProvider{
-  final _service = getIt.get<IUsersRepository>(instanceName: 'UsersService');
+  final _service = getIt.get<IUsersRepository>();
 
   Future<UserModel> getUsers() {
     return _service.getUsers();
