@@ -6,6 +6,11 @@ Widget listWidget(BuildContext context, UserModel model) => ListView.builder(
     itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.all(10),
           child: Card(
+            elevation: 15,
+            shadowColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
             child: ListTile(
               title: Text(
                   "${model.results![index].name!.first!} ${model.results![index].name!.last!}"),
